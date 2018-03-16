@@ -1,0 +1,19 @@
+2018-03-15 21:17:25.281  INFO 10756 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-15 21:17:25.466  INFO 10756 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-15 21:17:25.468  INFO 10756 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-03-15 21:17:25.561  INFO 10756 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-15 21:17:26.726  WARN 10756 --- [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : Access denied for user 'cinq'@'localhost' (using password: YES)
+2018-03-15 21:17:26.751  INFO 10756 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-15 21:17:26.782  INFO 10756 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-03-15 21:25:27.294  INFO 11090 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-15 21:25:27.455  INFO 11090 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-15 21:25:27.458  INFO 11090 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-03-15 21:25:27.507  INFO 11090 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-15 21:25:28.682  WARN 11090 --- [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : IO Exception: "java.io.FileNotFoundException: resource /sql/db_init.h2.sql"; "classpath:sql/db_init.h2.sql"; SQL statement:
+RUNSCRIPT from 'classpath:sql/db_init.h2.sql' [90031-196]
+2018-03-15 21:25:28.707  INFO 11090 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-15 21:25:28.729  INFO 11090 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null

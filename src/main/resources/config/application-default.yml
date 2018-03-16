@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/SAMPLE?rewriteBatchedStatements=true
+        username: dbuser
+        password: dbuser
+        max-wait: 1000
+        max-active: 50
+        test-on-borrow: false
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        database: MySQL
+
+broker:
+    bootstrapServer: localhost:9092
+    producer:
+        linger-time-ms: 0
