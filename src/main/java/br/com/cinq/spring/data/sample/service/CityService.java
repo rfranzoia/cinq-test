@@ -3,6 +3,8 @@ package br.com.cinq.spring.data.sample.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import br.com.cinq.spring.data.sample.domain.city.CityRepository;
 @Service
 public class CityService {
 
+	private static final Logger logger = LoggerFactory.getLogger(CityService.class);
+	
 	@Autowired
 	CityRepository repository;
 
@@ -35,6 +39,16 @@ public class CityService {
 		List<City> list = repository.findByCountryName("%" + countryNane.trim().toUpperCase() + "%");
 		
 		return list;
+	}
+	
+	public void populate(List<City> cities) {
+		cities.stream().forEach(c -> {
+			try {
+				repository.save(c);
+			} catch (Exception ex) {
+				logger.error("", ex);
+			}
+		});
 	}
 	
 	public City get(Integer id) {

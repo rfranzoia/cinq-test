@@ -2,6 +2,8 @@ package br.com.cinq.spring.data.sample.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import br.com.cinq.spring.data.sample.domain.country.CountryRepository;
 @Service
 public class CountryService {
 
+	private static final Logger logger = LoggerFactory.getLogger(CountryService.class);
+	
 	@Autowired
 	CountryRepository repository;
 
@@ -22,6 +26,16 @@ public class CountryService {
 		return result;
 	}
 
+	public void populate(List<Country> countries) {
+		countries.stream().forEach(c -> {
+			try {
+				repository.save(c);
+			} catch (Exception ex) {
+				logger.error("", ex);
+			}
+		});
+	}
+	
 	public Country get(Integer id) {
 		return repository.findById(id).get();
 	}

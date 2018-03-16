@@ -1,6 +1,7 @@
 package br.com.cinq.spring.data.sample.web;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -50,6 +51,15 @@ public class CityREST {
 		URI location = uriInfo.getRequestUriBuilder().path(city.getId().toString()).build();
 		
 		return Response.created(location).entity(city).build();
+	}
+	
+	@Path("/populate")
+	@POST
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	public Response populate(List<City> cities) {
+		service.populate(cities);
+		return Response.ok().build();
 	}
 	
 	@PUT

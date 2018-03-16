@@ -1,6 +1,7 @@
 package br.com.cinq.spring.data.sample.web;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -43,6 +44,15 @@ public class CountryREST {
 		URI location = uriInfo.getRequestUriBuilder().path(country.getId().toString()).build();
 		
 		return Response.created(location).entity(country).build();
+	}
+	
+	@Path("/populate")
+	@POST
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	public Response populate(List<Country> countries) {
+		service.populate(countries);
+		return Response.ok().build();
 	}
 	
 	@PUT

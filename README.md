@@ -1,5 +1,16 @@
 # CINQ-Test
 
+# Project coverage(2)
+
+- Added data populate REST service. Passing a List of Cities or Countries (respectively) to the service http://localhost:8090/rest/cities/populate or http://localhost:8090/rest/countries/populate
+   + the list must be passed as a JSON list
+   + the IDs may be ommited
+
+- still didn't fix the JUnit tests for City and Country repository. The memory DB is being created but the tables are not available. Still looking for a solution
+   + dev note: in my research I found that no one uses profile files for database configuration, but I don't believe this is the problem at all
+
+- There is a method for loading data from CSV files, but it's not being used
+
 # Project coverage
 
 - The project is using Java 8, but since its' code is very simple at the moment only one class is using something really "visible"
