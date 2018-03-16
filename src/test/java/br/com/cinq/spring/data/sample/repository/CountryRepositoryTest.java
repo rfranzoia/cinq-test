@@ -10,20 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.cinq.spring.data.sample.Util;
 import br.com.cinq.spring.data.sample.entity.Country;
-import br.com.cinq.spring.data.sample.repository.CountryRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
+@ActiveProfiles("unit")
 public class CountryRepositoryTest {
 
     @Autowired
     private CountryRepository dao;
-
+    
     @Test
     public void testGelAllCountries() {
 

@@ -1,0 +1,16 @@
+CREATE SCHEMA IF NOT EXISTS `SAMPLE`;
+
+USE `SAMPLE`;
+
+CREATE TABLE IF NOT EXISTS `Country` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(40),
+    PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `City` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(40),
+    `country_id` INT,
+    PRIMARY KEY (`id`))
+ENGINE = InnoDB;

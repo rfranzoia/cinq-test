@@ -3,6 +3,7 @@ package br.com.cinq.spring.data.sample.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -11,6 +12,7 @@ public class Country implements Serializable {
 	private static final long serialVersionUID = -5811782056301385957L;
 
 	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	private String name;
