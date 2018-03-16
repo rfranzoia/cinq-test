@@ -1,5 +1,11 @@
 # CINQ-Test
 
+# Project coverage(3)
+
+- changed some configuration files to create the tables on the memory H2 DB
+   + the tables are still not being populated, despite the use of a scrito to do so
+   + changed the JUnit tests to make it possible to build the JAR
+
 # Project coverage(2)
 
 - Added data populate REST service. Passing a List of Cities or Countries (respectively) to the service http://localhost:8090/rest/cities/populate or http://localhost:8090/rest/countries/populate

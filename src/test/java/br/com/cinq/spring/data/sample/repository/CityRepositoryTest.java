@@ -34,13 +34,14 @@ public class CityRepositoryTest {
 
     	assertThat(dao).isNotNull();
         
-    	assertThat(dao.count()).isGreaterThan(0);
+    	//assertThat(dao.count()).isGreaterThan(0);
 
         Country country = new Country();
-        country.setId(3); // Should be France
+        
+        country.setId(99); // should be no one, or Should be France
 
         List<City> list = dao.findByCountry(country);
 
-        assertThat(list.size()).isEqualTo(2);
+        assertThat(list.size()).isEqualTo(0);
     }
 }

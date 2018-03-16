@@ -1,18 +1,21 @@
 spring:
     datasource:
         driver-class-name: org.h2.Driver
-        url: jdbc:h2:mem:sample;DATABASE_TO_UPPER=false;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;TRACE_LEVEL_SYSTEM_OUT=1;INIT=RUNSCRIPT FROM 'classpath:sql/db_init.h2.sql'
+        url: jdbc:h2:mem:sample;DATABASE_TO_UPPER=false;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;TRACE_LEVEL_SYSTEM_OUT=1;INIT=RUNSCRIPT FROM 'sql/db_init.h2.sql'
         username: sa
         max-wait: 1000
         max-active: 50
         test-on-borrow: true
-        initialization-mode: embedded
-        schema: 'classpath:sql/schema-h2.sql'
-        data: 'classpath:sql/data-h2.sql'
         
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
         database: H2
+        
+        hibernate:
+            ddl-auto: create
+            
+            hbm2ddl:
+                import_files: 'classpath:/sql/data-h2.sql'
 
 broker:
     bootstrapServer: localhost:9092
