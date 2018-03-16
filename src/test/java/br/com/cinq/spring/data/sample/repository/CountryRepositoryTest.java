@@ -14,7 +14,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.cinq.spring.data.sample.Util;
-import br.com.cinq.spring.data.sample.entity.Country;
+import br.com.cinq.spring.data.sample.domain.country.Country;
+import br.com.cinq.spring.data.sample.domain.country.CountryRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

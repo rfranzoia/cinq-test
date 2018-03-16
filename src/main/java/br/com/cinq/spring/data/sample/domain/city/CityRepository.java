@@ -1,4 +1,4 @@
-package br.com.cinq.spring.data.sample.repository;
+package br.com.cinq.spring.data.sample.domain.city;
 
 import java.util.List;
 
@@ -6,8 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import br.com.cinq.spring.data.sample.entity.City;
-import br.com.cinq.spring.data.sample.entity.Country;
+import br.com.cinq.spring.data.sample.domain.country.Country;
 
 public interface CityRepository extends CrudRepository<City, Integer>{
 

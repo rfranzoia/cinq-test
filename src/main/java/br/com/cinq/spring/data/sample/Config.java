@@ -5,8 +5,8 @@ import javax.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
-import br.com.cinq.spring.data.sample.rest.CityREST;
-import br.com.cinq.spring.data.sample.rest.CountryREST;
+import br.com.cinq.spring.data.sample.web.CityREST;
+import br.com.cinq.spring.data.sample.web.CountryREST;
 
 /**
  * Register Jersey modules

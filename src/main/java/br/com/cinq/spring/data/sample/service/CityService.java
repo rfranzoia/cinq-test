@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.cinq.spring.data.sample.Util;
-import br.com.cinq.spring.data.sample.entity.City;
-import br.com.cinq.spring.data.sample.repository.CityRepository;
+import br.com.cinq.spring.data.sample.domain.city.City;
+import br.com.cinq.spring.data.sample.domain.city.CityRepository;
 
 @Service
 public class CityService {

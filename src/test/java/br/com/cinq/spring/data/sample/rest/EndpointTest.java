@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.cinq.spring.data.sample.entity.City;
+import br.com.cinq.spring.data.sample.domain.city.City;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)

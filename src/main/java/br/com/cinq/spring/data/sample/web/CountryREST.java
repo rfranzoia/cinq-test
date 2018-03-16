@@ -1,4 +1,4 @@
-package br.com.cinq.spring.data.sample.rest;
+package br.com.cinq.spring.data.sample.web;
 
 import java.net.URI;
 
@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
-import br.com.cinq.spring.data.sample.entity.Country;
+import br.com.cinq.spring.data.sample.domain.country.Country;
 import br.com.cinq.spring.data.sample.service.CountryService;
 
 @Component

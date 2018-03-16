@@ -1,21 +1,25 @@
-package br.com.cinq.spring.data.sample.entity;
-
-import java.io.Serializable;
+package br.com.cinq.spring.data.sample.domain.city;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import br.com.cinq.spring.data.sample.domain.country.Country;
 
 @Entity
-public class Country implements Serializable {
-
-	private static final long serialVersionUID = -5811782056301385957L;
+public class City {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
 	private String name;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "country_id", nullable = false)
+	private Country country;
 
 	public Integer getId() {
 		return id;
@@ -31,6 +35,14 @@ public class Country implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 
 	@Override
@@ -49,7 +61,7 @@ public class Country implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Country other = (Country) obj;
+		City other = (City) obj;
 		if (id == null) {
 			if (other.getId() != null)
 				return false;
@@ -60,7 +72,8 @@ public class Country implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", name=" + name + "]";
+		return "City [id=" + id + ", name=" + name + ", country=" + country.toString() + "]";
 	}
 
+	
 }

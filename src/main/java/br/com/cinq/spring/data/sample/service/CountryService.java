@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.cinq.spring.data.sample.Util;
-import br.com.cinq.spring.data.sample.entity.Country;
-import br.com.cinq.spring.data.sample.repository.CountryRepository;
+import br.com.cinq.spring.data.sample.domain.country.Country;
+import br.com.cinq.spring.data.sample.domain.country.CountryRepository;
 
 @Service
 public class CountryService {
